@@ -6,6 +6,8 @@ export const List = styled.li`
 export const Box = styled.div`
   padding: 20px;
 `;
-export const Text = styled.span`
+export const Text = styled.span<{ title?: string }>`
   font-size: 20px;
+  font-weight: ${({ title }) => (title ? 'bold' : 'normal')};
+  margin-right: 5px;
 `;

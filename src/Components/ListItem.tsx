@@ -14,7 +14,7 @@ export default function ListItem({ issues, measureRef }: IListItem) {
     <S.List ref={measureRef}>
       <S.Box onClick={() => handleMoveDetailPage(number)}>
         <S.Text># {number}</S.Text>
-        <S.Text>{title}</S.Text>
+        <S.Text title={title}>{title}</S.Text>
         <S.Text>user: {user?.login}</S.Text>
         <S.Text>created: {created_at}</S.Text>
         <S.Text>comments: {comments}</S.Text>
