@@ -20,7 +20,7 @@ export const RootRouter = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: '/detail',
+        path: '/:issueId',
         element: <DetailPage />,
       },
     ],
