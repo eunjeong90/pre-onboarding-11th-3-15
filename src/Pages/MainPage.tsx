@@ -18,7 +18,8 @@ export default function MainPage() {
   return (
     <ul>
       {issueList.map((issues: IIssueChild, index: number) => {
-        if (index === issueList.length - 1) {
+        if ((index + 1) % 5 === 0) return <li>광고임</li>;
+        if (index + 1 === issueList.length - 1) {
           return <ListItem key={issues.id} issues={issues} measureRef={measureRef} />;
         }
         return <ListItem key={issues.id} issues={issues} />;
