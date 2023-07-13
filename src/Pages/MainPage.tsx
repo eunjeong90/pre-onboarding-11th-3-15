@@ -3,6 +3,7 @@ import { useClient } from 'Context/clientContext';
 import { IIssueChild } from 'Interface/gitHubAPI';
 import ListItem from 'Components/ListItem';
 import useOnScreen from 'hooks/useOnScreen';
+import AddBox from 'Components/Common/CommercialContainer/CommercialContainer';
 
 export default function MainPage() {
   const { isLoading, hasMore, issueList, handleLoadList } = useClient();
@@ -18,7 +19,7 @@ export default function MainPage() {
   return (
     <ul>
       {issueList.map((issues: IIssueChild, index: number) => {
-        if ((index + 1) % 5 === 0) return <li>광고임</li>;
+        if ((index + 1) % 5 === 0) return <AddBox />;
         if (index + 1 === issueList.length - 1) {
           return <ListItem key={issues.id + index} issues={issues} measureRef={measureRef} />;
         }
