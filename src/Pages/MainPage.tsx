@@ -20,9 +20,9 @@ export default function MainPage() {
       {issueList.map((issues: IIssueChild, index: number) => {
         if ((index + 1) % 5 === 0) return <li>광고임</li>;
         if (index + 1 === issueList.length - 1) {
-          return <ListItem key={issues.id} issues={issues} measureRef={measureRef} />;
+          return <ListItem key={issues.id + index} issues={issues} measureRef={measureRef} />;
         }
-        return <ListItem key={issues.id} issues={issues} />;
+        return <ListItem key={issues.id + index} issues={issues} />;
       })}
       {isLoading && <div style={{ height: '50px' }}>isLoading...</div>}
     </ul>
